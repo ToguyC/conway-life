@@ -177,3 +177,12 @@ void draw_empty_circle(struct gfx_context_t *ctxt, uint32_t c_column,
         }
     }
 }
+
+void show_grid(struct gfx_context_t *ctxt, uint32_t width, uint32_t height,
+               uint32_t cell_size) {
+    for (uint16_t i = 0; i < width; i += cell_size) {
+        for (uint16_t j = 0; j < height; j += cell_size) {
+            gfx_putpixel(ctxt, i, j, COLOR_WHITE);
+        }
+    }
+}

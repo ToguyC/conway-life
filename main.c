@@ -8,14 +8,6 @@
 #define SCREEN_WIDTH (CELL_SIZE * CELL_COUNT)
 #define SCREEN_HEIGHT (CELL_SIZE * CELL_COUNT)
 
-void show_grid(struct gfx_context_t *ctxt) {
-    for (uint16_t i = 0; i < SCREEN_WIDTH; i += CELL_SIZE) {
-        for (uint16_t j = 0; j < SCREEN_HEIGHT; j += CELL_SIZE) {
-            gfx_putpixel(ctxt, i, j, COLOR_WHITE);
-        }
-    }
-}
-
 int main(void) {
     struct gfx_context_t *ctxt =
         gfx_create("Conway's game of life", SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -37,7 +29,7 @@ int main(void) {
     while (true) {
         gfx_clear(ctxt, COLOR_BLACK);
 
-        show_grid(ctxt);
+        show_grid(ctxt, SCREEN_WIDTH, SCREEN_HEIGHT, CELL_SIZE);
 
         SDL_PollEvent(&event);
         buttons = SDL_GetMouseState(&x, &y);

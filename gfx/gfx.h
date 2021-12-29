@@ -43,5 +43,6 @@ extern void draw_full_square(struct gfx_context_t *ctxt, uint32_t column,
                              uint32_t row, uint32_t width, uint32_t color);
 extern void draw_empty_circle(struct gfx_context_t *ctxt, uint32_t c_column,
                               uint32_t c_row, uint32_t r, uint32_t color);
+extern void show_grid(struct gfx_context_t *ctxt, uint32_t width, uint32_t height, uint32_t cell_size);
 
 #endif
